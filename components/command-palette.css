@@ -1,0 +1,24 @@
+.cmdk-dialog [cmdk-group-heading] {
+  padding-bottom: 0.5rem;
+}
+
+.cmdk-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--foreground);
+}
+
+.cmdk-item[data-selected="true"] {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.cmdk-item[data-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
