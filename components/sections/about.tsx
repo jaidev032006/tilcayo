@@ -79,7 +79,7 @@ export function About() {
             <div className="grid grid-cols-2 gap-8 md:gap-12">
               <div>
                 <div className="text-4xl md:text-5xl font-bold mb-2 text-foreground">
-                  <Counter from={0} to={25} suffix="+" />
+                  10+
                 </div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Projects Built</div>
               </div>

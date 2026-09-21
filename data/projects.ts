@@ -1,38 +1,29 @@
 export const projects = [
   {
     id: "01",
-    slug: "ai-business-platform",
-    category: "AI / SaaS",
-    title: "AI Business Platform",
-    description: "An intelligent platform designed to automate business workflows and improve decision making.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070",
-    technologies: ["Next.js", "OpenAI", "PostgreSQL", "Tailwind CSS"],
+    slug: "qubink",
+    tags: ["Web Platform", "Digital Product", "Workflow Management"],
+    title: "Qubink",
+    description: "Upload. Print. Collect.",
+    image: "/qubink.png",
+    link: "https://qubink.vercel.app/"
   },
   {
     id: "02",
-    slug: "modern-commerce",
-    category: "E-Commerce",
-    title: "Modern Commerce",
-    description: "A high-performance commerce experience designed around conversion and usability.",
-    image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=2070",
-    technologies: ["React", "Shopify", "Node.js", "Stripe"],
+    slug: "mahil-ro-system",
+    tags: ["Business Website", "Digital Experience", "Water Purification"],
+    title: "Mahil RO System",
+    description: "Pure Water. Healthy Life.",
+    image: "/mahil-ro.png",
+    link: "https://mahil-ro-system.vercel.app/"
   },
   {
     id: "03",
-    slug: "operations-platform",
-    category: "Web Application",
-    title: "Operations Platform",
-    description: "A centralized platform that simplifies complex business operations.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015",
-    technologies: ["Vue.js", "Python", "AWS", "Docker"],
-  },
-  {
-    id: "04",
-    slug: "smart-mobile",
-    category: "Mobile / Product",
-    title: "Smart Mobile Experience",
-    description: "A modern mobile product connecting users with essential digital services.",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=1974",
-    technologies: ["React Native", "Firebase", "TypeScript", "Figma"],
-  },
+    slug: "manikandan-lathe",
+    tags: ["Industrial Website", "Business Website", "Manufacturing"],
+    title: "Manikandan Lathe",
+    description: "Precision In Every Turn",
+    image: "/manikandan-lathe.png",
+    link: "https://ml-klm.vercel.app/"
+  }
 ];

@@ -54,8 +54,8 @@ export function ContactCta() {
             Start a Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           
-          <a href="mailto:tilcayoweb@gmail.com" className="text-muted-foreground hover:text-foreground font-medium transition-colors">
-            tilcayoweb@gmail.com
+          <a href="https://wa.me/917603854975" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground font-medium transition-colors">
+            +91 7603854975
           </a>
         </motion.div>
       </div>

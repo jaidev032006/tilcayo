@@ -25,7 +25,7 @@ export function Projects() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
             <motion.div
               key={project.id}
@@ -33,51 +33,42 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group flex flex-col"
+              className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-sm"
             >
-              <Link href={`/projects/${project.slug}`} className="relative block overflow-hidden rounded-2xl bg-secondary mb-8 aspect-[4/3]">
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-foreground/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                
-                {/* We use an img tag since next/image needs configuration for external domains */}
+              <Link href={project.link} target="_blank" rel="noopener noreferrer" className="relative block aspect-video overflow-hidden bg-muted">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                
-                <div className="absolute top-6 left-6 z-20">
-                  <span className="px-4 py-2 bg-background/90 backdrop-blur-md rounded-full text-xs font-semibold uppercase tracking-wider">
-                    {project.category}
-                  </span>
-                </div>
               </Link>
               
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <div className="flex items-center gap-4 mb-3">
-                    <span className="text-sm font-mono text-muted-foreground">{project.id}</span>
-                    <h3 className="text-2xl font-bold">{project.title}</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-6 max-w-md line-clamp-2">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map(tech => (
-                      <span key={tech} className="text-xs font-medium px-2.5 py-1 rounded-md border border-border text-muted-foreground">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+              <div className="flex flex-col p-6 flex-grow bg-white dark:bg-card">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags?.map(tag => (
+                    <span key={tag} className="px-3 py-1 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 rounded-full text-xs font-medium whitespace-nowrap">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
                 
-                <Link 
-                  href={`/projects/${project.slug}`}
-                  className="w-12 h-12 rounded-full border border-border flex items-center justify-center shrink-0 group-hover:bg-foreground group-hover:text-background group-hover:border-foreground transition-all duration-300"
-                >
-                  <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
-                </Link>
+                <h3 className="text-2xl font-bold text-foreground mb-2">{project.title}</h3>
+                
+                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-8 flex-grow">
+                  {project.description}
+                </p>
+                
+                <div className="mt-auto">
+                  <Link 
+                    href={project.link}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-600 dark:text-blue-400 font-bold hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  >
+                    Live Link <span className="ml-1 text-xl leading-none">→</span>
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}

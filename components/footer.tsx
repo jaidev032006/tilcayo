@@ -162,16 +162,19 @@ export function Footer() {
               </li>
               <li className="pt-2">
                 <a 
-                  href="mailto:tilcayoweb@gmail.com" 
+                  href="https://wa.me/917603854975" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors group flex items-center gap-1"
                 >
                   <span className="flex flex-col">
-                    <span className="text-xs text-muted-foreground/70 mb-0.5">Email</span>
+                    <span className="text-xs text-muted-foreground/70 mb-0.5">WhatsApp</span>
                     <span className="relative">
-                      tilcayoweb@gmail.com
+                      +91 7603854975
                       <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all group-hover:w-full"></span>
                     </span>
                   </span>
+                  <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 -translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all ml-1 mt-3" />
                 </a>
               </li>
             </ul>

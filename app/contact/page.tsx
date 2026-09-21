@@ -52,33 +52,22 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
     try {
-      const response = await fetch("https://formsubmit.co/ajax/2c40fc0580b61e8987d010830c1581a6", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          _subject: "New Project Inquiry — TILCAYO",
-          _template: "box",
-          _captcha: "false",
-          Name: values.name,
-          Email: values.email,
-          Phone: values.phone || "Not provided",
-          Company: values.company || "Not provided",
-          "Project Type": values.projectType,
-          Budget: values.budget,
-          Timeline: values.timeline,
-          "Project Details": values.message
-        }),
-      });
+      const text = `New Project Inquiry — TILCAYO
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        form.reset();
-      } else {
-        setSubmitStatus("error");
-      }
+Name: ${values.name}
+Email: ${values.email}
+Phone: ${values.phone || "Not provided"}
+Company: ${values.company || "Not provided"}
+Project Type: ${values.projectType}
+Budget: ${values.budget}
+Timeline: ${values.timeline}
+Project Details: ${values.message}`;
+
+      const whatsappUrl = `https://wa.me/917603854975?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, '_blank');
+
+      setSubmitStatus("success");
+      form.reset();
     } catch (error) {
       setSubmitStatus("error");
     } finally {
@@ -110,9 +99,9 @@ export default function ContactPage() {
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-sm font-bold tracking-wider text-muted-foreground uppercase mb-2">Email</h3>
-              <a href="mailto:tilcayoweb@gmail.com" className="text-2xl font-medium hover:text-indigo-500 transition-colors">
-                tilcayoweb@gmail.com
+              <h3 className="text-sm font-bold tracking-wider text-muted-foreground uppercase mb-2">WhatsApp</h3>
+              <a href="https://wa.me/917603854975" target="_blank" rel="noopener noreferrer" className="text-2xl font-medium hover:text-indigo-500 transition-colors">
+                +91 7603854975
               </a>
             </div>
             <div>
@@ -298,7 +287,7 @@ export default function ContactPage() {
 
               {submitStatus === "error" && (
                 <p className="text-sm font-medium text-red-600 dark:text-red-400 text-center mt-4">
-                  Unable to send your inquiry right now. Please try again or email us directly at tilcayoweb@gmail.com.
+                  Unable to send your inquiry right now. Please try again or contact us on WhatsApp at +91 7603854975.
                 </p>
               )}
             </form>
