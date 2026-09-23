@@ -22,7 +22,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
 
           <header className="max-w-4xl mb-16">
             <span className="px-4 py-2 bg-secondary rounded-full text-xs font-semibold uppercase tracking-wider mb-6 inline-block">
-              {project.category}
+              {project.tags[0]}
             </span>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
               {project.title}
@@ -79,7 +79,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
               <div className="p-8 rounded-2xl bg-secondary/50 border border-border sticky top-32">
                 <h3 className="text-lg font-bold mb-6">Technologies Used</h3>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map(tech => (
+                  {project.tags.map((tech: string) => (
                     <span key={tech} className="px-3 py-1.5 bg-card border border-border rounded-lg text-sm font-medium">
                       {tech}
                     </span>
